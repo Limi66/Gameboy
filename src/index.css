@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&family=Silkscreen&display=swap');
+/* font-family: 'Oxanium', cursive;
+font-family: 'Silkscreen', cursive; */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,#root {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(26, 26, 26);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+:root{
+  --mainTone: rgb(215,210,216);
+  --secTone: rgb(115,116,136);
+  --btnShadow: rgb(201,195,199);
+  --redBtn: rgb(111,1,25);
+  --darkBtn: rgb(5,2,5);
+  --grayBtn: rgb(154,148,161);
+  --led: rgb(226,46,27);
+  --screen: rgb(156,160,76);
+  --textCol: rgb(51,44,96);
+  --screenTextCol: rgb(26, 26, 26);
+
+  --font-size: calc(8px + 1.5vh);
+}
+.none{
+  display: none!important;
+}
+
+.App{
+  margin: 10px;
+  height: 95vh;
+  width: auto;
+  aspect-ratio: 90/148;
+  background-color: var(--mainTone);
+  position: relative;
+  border-radius: 20px 20px 120px 20px;
+  /* overflow: hidden; */
+  /* transform: scale(1.2); */
+  font-family: 'Oxanium', cursive;
+  box-shadow: 30px 30px 50px -20px rgba(0, 0, 0, 0.1),
+              inset 20px 20px 10px rgba(255, 255, 255, 0.5),
+              -20px -20px 40px rgba(255, 255, 255, 0.1),
+              inset 5px 5px 10px rgba(255, 255, 255, 1),
+              inset -15px -15px 20px rgba(0, 0, 0, 0.2),
+              inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+.line{
+  position: absolute;
+  background-color: var(--btnShadow);
+  box-shadow: inset 0 1px 1px #303030
+}
+#line1{
+  width: 100%;
+  height: .8%;
+  top: 4%;
+}
+#line2{
+  width: 1.3%;
+  height: 4.22%;
+  left: 7%;
+}
+#line3{
+  width: 1.3%;
+  height: 4.22%;
+  right: 7%;
+}
+.darkBtnContainer{
+  width: 30%;
+  height: auto;
+  aspect-ratio: 1;
+  position: absolute;
+  background-color: var(--btnShadow);
+  border-radius: 50%;
+  top: 60%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 8px #30303031
+}
+
+.dirBtn{
+  height: 80%;
+  width: 30%;
+  position: absolute;
+  background-color: var(--darkBtn);
+  border-radius: 8px;
+  border: 0;
+}
+#rightLeftBtn{
+  rotate: 90deg;
+}
+.redBtnContainer{
+  width: auto;
+  height: 20%;
+  aspect-ratio: 1/2;
+  position: absolute;
+  background-color: var(--btnShadow);
+  border-radius: 50px;
+  top: 58%;
+  right: 15%;
+  rotate: 65deg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: inset 0 0 8px #30303031
+}
+.baBtn{
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1;
+  background-color:  var(--redBtn);
+  border-radius: 50%;
+  margin: 5%px;
+  box-shadow: 0 0 5px #303030
+}
+.baBtn > p{
+  position: absolute;
+  left: 110%;
+  rotate: -90deg;
+  font-size: 2vh;
+  font-weight: 800;
+  color: var(--textCol);
+}
+#aBtn > p{
+  top: 20%;
+}
+#bBtn > p{
+  top: 70%;
+}
+.longBtn{
+  width: 15%;
+  height: auto;
+  aspect-ratio: 5/1;
+  position: absolute;
+  background-color: var(--grayBtn);
+  border-radius: 10px;
+  top: 85%;
+  rotate: -25deg;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+}
+.longBtn > p{
+  position: absolute;
+  top: 120%;
+  font-size: var(--font-size);
+  font-weight: 800;
+  color: var(--textCol);
+
+}
+#selectBtn{
+  left: 32.5%;
+}
+#startBtn{
+  left: 52.5%
+}
+.sec{
+  width: 80%;
+  height: 40%;
+  position: absolute;
+  margin: 15% 10% 0 10%;
+  background-color: var(--secTone);
+  border-radius: 15px 15px 90px 15px;
+  display: flex;
+  justify-content: center;
+}
+.power{
+  width: 3%;
+  height: auto;
+  aspect-ratio: 1;
+  background-color: var(--led);
+  border-radius: 50%;
+  position: absolute;
+  left: 5%;
+  top: 35%;
+  box-shadow: 0 0 8px #ff7676
+}
+.power > div{
+  width: 550%;
+  height: 100%;
+  position: absolute;
+  top: 130%;
+  left: -120%;
+  font-weight: 800;
+  font-size: 1vmin;
+  word-break: break-all;
+  color: var(--mainTone);
+}
+
+.container{
+  width: 65%;
+  height: 70%;
+  margin: 10% 15% 10% 15%;
+  background-color: var(--screen);
+  box-shadow: inset 0 0 13px #303030;
+  font-family: 'Silkscreen', cursive;
+  overflow: hidden;
+}
+#menuContainer{
+  width: 100%;
+  height: 100%;
+}
+.Menu,.Option,.Volume,.Login{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--screenTextCol);
+}
+#userNameInput{
+  width: 80%;
+  height: 60%;
+  border: none;
+  background-color: var(--screen);
+  color: var(--screenTextCol);
+  font-family: 'Silkscreen', cursive;
+  font-size: 1.8vh;
+  text-align: center;
+  word-break: normal;
+  resize: none;
+}
+::placeholder{
+  color: var(--screenTextCol);
+  opacity: 1;
+}
+#userNameInput:focus{
+  outline: none;
+}
+.showUserName{
+  /* background-color: #ff7676; */
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  top: 40%;
+  width: auto;
+  max-width: 60%;
+  height: auto;
+  color: var(--screenTextCol);
+  font-size: 1.8vh;
+  text-align: center;
+  word-break: normal;
+  pointer-events: none;
+  border-right: 2px solid var(--screenTextCol);
+  animation: 
+    typing 5s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--screenTextCol); }
+}
+.Menu > h1{
+  margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: clamp(18px, 4vh, 36px);
+}
+.Option > h1{
+  margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: clamp(18px, 4vh, 36px);
+}
+.Volume > h1{
+  margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: clamp(18px, 4vh, 36px);
+}
+.volBtnContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background-color: #ff7676; */
+}
+.volBtnContainer > p{
+  font-size: var(--font-size);
+  color: var(--screenTextCol);
+  margin: 5%;
+  user-select: none;
+}
+#volDec:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+#volInc:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+.menuList,.optionList > li{
+  font-size: 2.5vh;
+  list-style: none;
+  text-align: center;
+}
+
+.menuList > li:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+
+.optionList > li:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+
+.ExitVolBtn{
+  font-size: 2.5vh;
+  text-align: center;
+}
+.ExitVolBtn:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+
+.Games{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  /* grid-template: 1fr 1fr / 1fr 1fr; */
+}
+
+.Games > div{
+  /* background-color: #00cf1c; */
+  width: 50%;
+  height: auto;
+
+}
+.gameName{
+  font-size: 0.1vh;
+  white-space: nowrap;
+}
+
+/* css - start of game2 */
+.Game2Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+}
+
+.Game2Container  > #g2c2 >  button{
+  width: 16%;
+  height: 21px;
+  background-color: #db8521;
+}
+
+.Game2Container > div > button{
+  background-color: #db8521;
+  display: flex;
+  justify-content: center;
+}
+
+#g2replayButton{
+  width: 25%;
+  height: 21px;
+}
+
+#g2backButton{
+  width: 15%;
+  height: 21px;
+}
+
+.Game2Container  > #g2c2 > button:hover {
+  transform: translateY(-6px);
+  box-shadow: 2px 2px 6px 2px rgb(7, 18, 39);
+}
+
+.Game2Container  > #g2c2 > button:active {
+  transform: translateY(-6px) scale(.98);
+}
+
+#diceCupImg{
+  width: 100%;
+}
+
+.diceIcon{
+ color: #2c0338;
+}
+
+#arrowImg{
+  width: 5%;
+}
+
+#betAmountInput{
+  width: 16%;
+  background-color: #db8521;
+  text-align: center;
+}
+
+#g2c3 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+#g2c2{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#g2c1{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+/* css - end of game2 */
+
+.Game1Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Game1Container > div{
+  width: 90%;
+  margin: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game > p{
+  color: var(--screenTextCol);
+}
+.game > *{
+  pointer-events: none;
+}
+
+.basketBallContainer{
+  min-height: 32%;
+}
+.scoreDisplay{
+  font-size: var(--font-size);
+  border: 2px dotted rgba(0, 0, 0, 0.8);
+}
+.healthContainer{
+  position: absolute;
+  height: 8%;
+  max-width: 7vh;
+  left: 17%;
+  bottom: 16%;
+  display: flex;
+  justify-content: start!important;
+}
+.healthContainer > div{
+  font-size: 0.1vh;
+  margin: 5%;
+  color: var(--screenTextCol);
+}
+.move{
+  animation: move 5s linear infinite;
+}
+
+@keyframes move{
+  0%{
+    transform: translatex(0%);
+  }
+  25%{
+    transform: translatex(-120%);
+  }
+  50%{
+    transform: translatex(0%);
+  }
+  75%{
+    transform: translatex(120%);
+  }
+  100%{
+    transform: translatex(0%);
+  }
+}
+
+.shoot{
+  animation: shoot 1.5s linear forwards;
+}
+
+@keyframes shoot{
+  0%{
+    transform: translateY(0%);
+  }
+  25%{
+    transform: translateY(-480%) rotate(360deg);
+    width: 15%;
+    opacity: 1;
+  }
+  35%{
+    transform: translateY(-470%) rotate(420deg);
+    width: 13%;
+    opacity: 1;
+  }
+  45%{
+    opacity: .3;
+  }
+  50%{
+    transform: translateY(-400%) rotate(480deg);
+    width: 12%;
+    opacity: 0;
+  }
+  75%{
+    transform: translateY(0%) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.ikun{
+  width: 64.8%!important;
+  height: 70%;
+  background-color: var(--screen);
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+  animation: fadeIn 1s forwards;
+  box-shadow: inset 0 0 13px #303030;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.gameOver{
+  position: absolute;
+  top: 10%;
+  font-size: var(--font-size);
+  color: var(--screenTextCol);
+}
+.tieSanKao{
+  width: 40%;
+  aspect-ratio: 1;
+  /* left: -20%; */
+  position: absolute;
+  top: 25%;
+  overflow: hidden;
+}
+.score{
+  position: absolute;
+  bottom: 20%;
+  color: var(--screenTextCol);
+  font-size: calc(4px + 1.5vh);
+}
+.xiaoheizi{
+  height: 100%;
+  animation: kao .8s steps(7) infinite;
+  mix-blend-mode: multiply; 
+}
+@keyframes kao {
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-100%,0,0);
+  }
+}
+.g1Img{
+  mix-blend-mode: multiply; 
+}
+
+.backBtn{
+  position: absolute;
+  bottom: 8%;
+  color: var(--screenTextCol);
+  font-size: calc(4px + 1.5vh);
+  width: 22%;
+  height: 10%;
+  text-align: center;
+}
+
+.backBtn:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+
+/*Rachel's part*/
+#inputNum{
+    width: 60%;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid var(--screenTextCol);
+    background-color: var(--screen);
+    color: var(--screenTextCol);
+    font-family: 'Silkscreen', cursive;
+    font-size: 1.8vh;
+    text-align: center;
+    word-break: normal;
+    resize: none;
+  
+}
+  
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+  
+  
+#inputNum:focus{
+    outline: none;
+  
+}
+#g4ans{
+  position: absolute;
+  top: 50%;
+}
+  
+.enter:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+
+.g4BackBtn:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+.restart:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+  
+.Game4Container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--screenTextCol);
+}
+
+.g4EndBtns{
+    position: absolute;
+    width: 40%;
+    height: 15%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.g4EndBtns > div{
+    margin: 1%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: var(--screenTextCol);
+    font-size: calc(4px + 1.5vh);
+}
+
+#calImg{
+    width: 90%;
+    margin-left: 3%;
+}
+
+.scaleUp{
+  animation: scaleUp 1s forwards;
+}
+@keyframes scaleUp {
+  from{
+    transform: scale(1);
+    top: 0;
+  }
+  to{
+    transform: scale(2);
+    top: 48%;
+  }
+}
+
+#danceImg{
+  width: 40%;
+  /* background-color: #ff7676; */
+  margin-left: 30%;
+  margin-bottom: 10%;
+}
+
+@media only screen and (height <= 600px) {
+  .gameName {
+    transform: scale(0.75);
+  }
+}
+
+@media only screen and (height <= 460px) {
+  .gameName {
+    transform: scale(0.5);
+  }
+}
+/*something new*/
+#g4h3{
+  width: 100%;
+}
+#g4h1h3{
+  width: 100%;
+}
+
+.showScore::first-letter{
+  font-size: 1.5rem;
+}
+
+.scaleUpDarkBtn{
+  animation: scaleUpDarkBtn 1s ease-in-out forwards;
+}
+
+@keyframes scaleUpDarkBtn{
+  0%{
+    top: 60%;
+    left: 10%;
+    opacity: 1;
+  }
+  50%{
+    top: 45%;
+    left: -15%;
+    opacity: 0;
+  }
+  100%{
+    top: 30%;
+    left: -35%;
+    opacity: .6;
+  }
+}
+
+.scaleUpRedBtn{
+  animation: scaleUpRedBtn 1s ease-in-out forwards;
+}
+
+@keyframes scaleUpRedBtn{
+  0%{
+    top: 58%;
+    right: 15%;
+    opacity: 1;
+  }
+  50%{
+    top: 45%;
+    right: -15%;
+    opacity: 0;
+  }
+  100%{
+    top: 30%;
+    right: -28%;
+    opacity: .6;
+  }
+}
+
+#pressEffect{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  aspect-ratio: 1;
+  background: linear-gradient(rgba(255, 255, 255, 1)-20%, rgba(0, 0, 0, 0) 40%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.pressEffect-up{
+  rotate: 0deg;
+  opacity: 1!important;
+}
+.pressEffect-down{
+  rotate: 180deg;
+  opacity: 1!important;
+}
+.pressEffect-right{
+  rotate: 90deg;
+  opacity: 1!important;
+}
+.pressEffect-left{
+  rotate: -90deg;
+  opacity: 1!important;
+}
